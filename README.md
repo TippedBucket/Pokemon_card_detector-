@@ -26,7 +26,7 @@ Developed a real-time Pokémon card stat reader using a custom-trained YOLOv8n o
       python3 -m venv cam-env
       source cam-env/bin/activate
       pip3 install --upgrade pip
-   - Now install Ultralytics in the venv: ```pip install ultralytics```
+   - Now install Ultralytics in the cam-env venv: ```pip install ultralytics```
    - If everything was done correctly, you can now create the YOLOV8n model with the yaml file created earlier:
      ```bash
         yolo detect train\
@@ -34,7 +34,26 @@ Developed a real-time Pokémon card stat reader using a custom-trained YOLOv8n o
            data = path/to/your/file.yaml\
            name = pokemon_card_detection
            epochs =20 #How many passes through the training dataset
-           device =0 #0 correlates to the GPU
+           device =0 #0 correlates to the GPU````
+     
+   - This will take some time to train and will depend on your GPU. It took about an hour on an old 4GB VRAM Nvidia card from a former gaming laptop I had lying around. 
+5. Exported the best PyTorch model in the IMX format for the SONY IMX500. The best PyTorch model will be in the runs/weights folder created in step 4.
+   - However, there's a glitch right now (or at the time of creating this tool) where the Ultralytics export to IMX feature won't work unless we move the best.pt file into the folder where we are running the yolo_train.py script, and point to it in our excecution.
+   - Run the following to export the model to imx:
+      ```bash
+      python yolo_train.py \
+         --init_model runs/path/to/best.pt \
+         --export_format imx \
+         --export_only
+         --int8_weights
+   -After about 3-5 minutes, you will see a best_imx_model folder created that will contain the packet_out.zip and the labels.txt files that we will need to get onto our Raspberry Pi.
+6. On the Raspberry Pi, we will need to git clone ```picamera2``` from Raspberry Pi as well as install the ```imx500_tools imx500-all```
+      ```bash
+      sudo apt install imx500-all imx500-tools
+      git clone -b next https://github.com/raspberrypi/picamera2
+      cd picamera2
+      pip install -e .  --break-system-packages
+   
      
       
 
