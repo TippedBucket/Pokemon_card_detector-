@@ -11,7 +11,8 @@ Developed a real-time Pokémon card stat reader using a custom-trained YOLOv8n o
       - Shear: ±9° Horizontal, ±10° Vertical
       - Noise: Up to 0.1% of pixels
    - See annotated dataset [Here]( https://universe.roboflow.com/invention-time/pokemon-card-detection-haiqn)
-3.
+   - You can test out the RF-DETR real-time object detection model [Here](https://app.roboflow.com/invention-time/pokemon-card-detection-haiqn/models/pokemon-card-detection-haiqn/3) for a fun example. (Must have Roboflow account, its free dont worry)
+3. Extracted the dataset for YOLOV8 model that way we get the train, val, and test data split of both images and labels and a yaml file , as the only model that will fit on the SONYIMX500 AI Camera is a YOLOV8N model given its 8MB
 
 
 
