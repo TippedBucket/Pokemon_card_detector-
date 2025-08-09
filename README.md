@@ -16,13 +16,27 @@ Developed a real-time Pokémon card stat reader using a custom-trained YOLOv8n o
    - This gives us a training, validation, and testing image and labeling data split for all images and labels, as well as a YAML file that contains the number of classes, class names, and local location of the data splits.
      - You can see the data_example folder to see an image and coordinate pairing for demonstration. For a normal bounding box, the first two coordinates are the x and y center of the box relative to the grid cell, and the last two are the height and width of the bounding box.
    - Additionally, given the small memory size of the IMX500 [8MB](https://developer.sony.com/imx500), we will need to quantize and compress this model into a YOLOV8N (smallest YOLOV8) model using Ultralytic.
-4. Extracted a YOLOV8N model from Ultralytics
+4. Extracted a YOLOV8n model from Ultralytics
    - Thankfully, Ultralytics has a demo on how to export a YOLO model to the IMX500 Camera. In preparation, we will need to create a virtual environment and install WSL for Windows.
    - Install WSL in your ***Administrator instance of Powershell***:  ```wsl --install```
      - Make sure to reboot your PC after installation
      - Install python and dependent packages: ```sudo apt install python3-pip python3-opencv python3-venv git libatlas-base-dev```
-   - Now create a virtual environment: ```python3 -m venv cam-env```
-   
+   - Now create a virtual environment:
+      ```bash
+      python3 -m venv cam-env
+      source cam-env/bin/activate
+      pip3 install --upgrade pip
+   - Now install Ultralytics in the venv: ```pip install ultralytics```
+   - If everything was done correctly, you can now create the YOLOV8n model with the yaml file created earlier:
+     ```bash
+        yolo detect train\
+           model=yolov8n.pt\
+           data = path/to/your/file.yaml\
+           name = pokemon_card_detection
+           epochs =20 #How many passes through the training dataset
+           device =0 #0 correlates to the GPU
+     
+      
 
 
 
