@@ -11,8 +11,13 @@ Developed a real-time Pokémon card stat reader using a custom-trained YOLOv8n o
       - Shear: ±9° Horizontal, ±10° Vertical
       - Noise: Up to 0.1% of pixels
    - See annotated dataset [Here]( https://universe.roboflow.com/invention-time/pokemon-card-detection-haiqn)
-   - You can test out the RF-DETR real-time object detection model [Here](https://app.roboflow.com/invention-time/pokemon-card-detection-haiqn/models/pokemon-card-detection-haiqn/3) for a fun example. (Must have Roboflow account, its free dont worry)
-3. Extracted the dataset for YOLOV8 model that way we get the train, val, and test data split of both images and labels and a yaml file , as the only model that will fit on the SONYIMX500 AI Camera is a YOLOV8N model given its 8MB
+   - You can test out the RF-DETR real-time object detection model [Here](https://app.roboflow.com/invention-time/pokemon-card-detection-haiqn/models/pokemon-card-detection-haiqn/3) for a fun example. (Must have Roboflow account, it's fre,e dont worry)
+3. Extracted the dataset for the YOLOV8 model from Roboflow
+   - This gives us a training, validation, and testing image and labeling data split for all images and labels, as well as a YAML file that contains the number of classes, class names, and local location of the data splits.
+     - You can see the data_example folder to see an image and coordinate pairing for demonstration. For a normal bounding box, the first two coordinates are the x and y center of the box relative to the grid cell, and the last two are the height and width of the bounding box.
+   - Additionally, given the small memory size of the IMX500 [8MB](https://developer.sony.com/imx500), we will need to quantize and compress this model into a YOLOV8N (smallest YOLOV8) model using Ultralytic.
+4. Extracted a YOLOV8N model from Ultralytics
+   - Thankfully, Ultralytics has a demo on how to export a YOLO model to the IMX500 Camera
 
 
 
