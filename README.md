@@ -1,6 +1,17 @@
 # POKEMON CARD DETECTOR
 Developed a real-time Pokémon card stat reader using a custom-trained YOLOv8n object detection model and OCR. The goal is to pull live data from the web using https://pokemontcg.io/ to pull card pricing, Name, set_ID, and Card_Number to uniquely identify each card scanned.<br>
 
+# HARDWARE REQUIRED
+
+|SONYIMX500 AI CAMERA| RaspberryPI | Seperate Computer |
+|-----------------|-----------------|-----------------|
+|<p align="center"> ![Rasp_ai_cam](https://github.com/user-attachments/assets/6fd3e230-1060-40df-9afe-a44479e2307a)| <p align="center">  ![pi_5](https://github.com/user-attachments/assets/2d0179f2-2d01-4506-ba50-1d7881d8f763)
+   | Row 1 Col 3  |
+| Link: https://www.raspberrypi.com/products/ai-camera/    | Row 2 Col 2     | Row 2 Col 3     |
+| Price: [$108CAD](https://www.digikey.ca/en/products/detail/raspberry-pi/SC1174/24627137?gclsrc=aw.ds&gad_source=1&gad_campaignid=20282404290&gbraid=0AAAAADrbLliyfXQEUVvMYjKzIqkJOOA5I&gclid=CjwKCAjwhuHEBhBHEiwAZrvdcu4O0hh-xE3bAOjFPrEofyCMKrRmB_MbRjcnApL76BPx21bD2Bq61BoCsL8QAvD_BwE)   | Row 3 Col 2     | Row 3 Col 3     |
+
+
+
 # WORKFLOW<br>
 ![CV_PFD](https://github.com/user-attachments/assets/fbe7533c-9856-40df-8ae3-682c2784a045) <br>
 
@@ -53,6 +64,11 @@ Developed a real-time Pokémon card stat reader using a custom-trained YOLOv8n o
       git clone -b next https://github.com/raspberrypi/picamera2
       cd picamera2
       pip install -e .  --break-system-packages
+
+7. After pointing to the picamera2 examples for the IMX500:```/Documents/picamera2/examples/imx500```, you can then run the following script to detect the card name and card ID of a card!
+   ```bash
+   python imx500_object_detection_demo.py --model /home/<user>/Documents/<file.rpk> --labels /home/<user>/Documents/<labels.txt> --fps 25 --bbox-normalization --ignore-dash-labels --bbox-order xy
+8. It was at this point that I realized the quantization and initial model dataset size was a bit larger than expected, and took the full 8MB of memory on the SONYIMX500. So the model doesn't work as accurately as I was expecting due to the size limitation. My best guess is that it cut off some of the dataset to account for the small memory space, which lowered overall accuracy and detection.  I am still in the process of increasing the accuracy on the IMX500 camera, but in the meantime, the next section will walk you through how to do the API call for a device with more memory
    
      
       
