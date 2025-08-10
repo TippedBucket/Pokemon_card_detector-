@@ -63,7 +63,7 @@ Developed a real-time Pokémon card stat reader using a custom-trained YOLOv8n o
          --export_only
          --int8_weights
    -After about 3-5 minutes, you will see a best_imx_model folder created that will contain the packet_out.zip and the labels.txt files that we will need to get onto our Raspberry Pi.
-6. On the Raspberry Pi, we will need to git clone ```picamera2``` from Raspberry Pi as well as install the ```imx500_tools imx500-all```
+6. On the Raspberry Pi, we will need to git clone ```picamera2``` from Raspberry Pi as well as install ```imx500_tools imx500-all```
       ```bash
       sudo apt install imx500-all imx500-tools
       git clone -b next https://github.com/raspberrypi/picamera2
