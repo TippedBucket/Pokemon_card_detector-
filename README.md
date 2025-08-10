@@ -17,7 +17,7 @@ Developed a real-time Pokémon card stat reader using a custom-trained YOLOv8n o
 
 
 
-# WORKFLOW<br>
+# MODEL WORKFLOW<br>
 ![CV_PFD](https://github.com/user-attachments/assets/fbe7533c-9856-40df-8ae3-682c2784a045) <br>
 
 1. Gathered Pokémon card datasets from Kaggle [Example]( https://www.kaggle.com/datasets/bzhbzh35/pokemon-cards-per-set)<br>
