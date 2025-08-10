@@ -3,12 +3,14 @@ Developed a real-time Pokémon card stat reader using a custom-trained YOLOv8n o
 
 # HARDWARE REQUIRED
 
-|SONYIMX500 AI CAMERA| RaspberryPI | Seperate Computer |
-|-----------------|-----------------|-----------------|
-|<p align="center"> ![Rasp_ai_cam](https://github.com/user-attachments/assets/6fd3e230-1060-40df-9afe-a44479e2307a)| <p align="center">  ![pi_5](https://github.com/user-attachments/assets/2d0179f2-2d01-4506-ba50-1d7881d8f763)
-   | Row 1 Col 3  |
-| Link: https://www.raspberrypi.com/products/ai-camera/    | Row 2 Col 2     | Row 2 Col 3     |
-| Price: [$108CAD](https://www.digikey.ca/en/products/detail/raspberry-pi/SC1174/24627137?gclsrc=aw.ds&gad_source=1&gad_campaignid=20282404290&gbraid=0AAAAADrbLliyfXQEUVvMYjKzIqkJOOA5I&gclid=CjwKCAjwhuHEBhBHEiwAZrvdcu4O0hh-xE3bAOjFPrEofyCMKrRmB_MbRjcnApL76BPx21bD2Bq61BoCsL8QAvD_BwE)   | Row 3 Col 2     | Row 3 Col 3     |
+| SONYIMX500 AI CAMERA                                  | RASPBERRYPI                                         | PC-Need GPU                                         |
+|------------------------------------------------------|----------------------------------------------------|----------------------------------------------------|
+| <p align="center"><img src="https://github.com/user-attachments/assets/6fd3e230-1060-40df-9afe-a44479e2307a" width="150" /></p> | <p align="center"><img src="https://github.com/user-attachments/assets/2d0179f2-2d01-4506-ba50-1d7881d8f763" width="150" /></p> | <p align="center"><img src="https://github.com/user-attachments/assets/89d65f65-0520-44da-ac6b-a45f535ba4b2" width="150" /></p> |
+| Link: https://www.raspberrypi.com/products/ai-camera/ | Link: https://www.raspberrypi.com/products/raspberry-pi-5/                                        | Link: NA, just need a GPU to train YOLO Model                                         |
+| Price: [$108CAD](https://www.digikey.ca/en/products/detail/raspberry-pi/SC1174/24627137?gclsrc=aw.ds&gad_source=1&gad_campaignid=20282404290&gbraid=0AAAAADrbLliyfXQEUVvMYjKzIqkJOOA5I&gclid=CjwKCAjwhuHEBhBHEiwAZrvdcu4O0hh-xE3bAOjFPrEofyCMKrRmB_MbRjcnApL76BPx21bD2Bq61BoCsL8QAvD_BwE) | Price: [$85CAD](https://www.digikey.ca/en/products/detail/raspberry-pi/SC1431/21658261?gclsrc=aw.ds&gad_source=1&gad_campaignid=20291741917&gbraid=0AAAAADrbLliwML6BanXAlSYS3eoqKNexG&gclid=CjwKCAjwhuHEBhBHEiwAZrvdcnd4SGfxmmOiQ56PPaIUpkEzczryBMtFqdYtGjf07A5ui0cgBur_YhoCr8sQAvD_BwE)                                         | Price: Doesnt have to be fancy                                        |
+1. If it's your first time setting up the Pi, you will need a microSD card, usbc power supply, and micro HDMI cable to connect the Pi to a monitor.
+2. If you are creating your own dataset, you will need a camera and a bunch of Pokémon cards.
+3. (*Optional but recommended*) A case for your Pi and AI camera. You can find public Raspberry Pi case files online, but I have linked an STL file to print the camera case and an F3D file for easy alterations.
 
 
 
