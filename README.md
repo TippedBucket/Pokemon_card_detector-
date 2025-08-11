@@ -14,6 +14,9 @@ Developed a real-time Pokémon card stat reader using a custom-trained YOLOv8n o
 **Camera Case**
 <img width="200 " height="300" alt="case_image" src="https://github.com/user-attachments/assets/6e7ab73e-0e45-4c4c-9920-b30f4282a616" />
 
+# Example Pictures
+<img width="394" height="525" alt="card_detection" src="https://github.com/user-attachments/assets/3a2ae39b-00fc-472c-bee7-e756908ba109" />
+<img width="495" height="568" alt="OCR Live Data Pull" src="https://github.com/user-attachments/assets/42c90493-320e-45e0-a823-e6d3a2ec4fdc" />
 
 
 
@@ -88,8 +91,21 @@ Once you have created a YOLO model following the previous steps, you can run the
    ```bash
    pip install opencv-python pillow pytesseract ultralytics requests tk
 3. Get the Pokémon API key by signing up at [Pokemontcg.io](https://pokemontcg.io/)
-4. Create your YOLO model or use the model in this repository here
-5. 
+4. Create your YOLO model or use the model in this repository [here](https://github.com/TippedBucket/Pokemon_card_detector-/tree/main/model)
+5. Download the Python script that runs the model and performs tesseract OCR.
+   - Functionality of the script:
+     - Press [ESC] to exit the program at any time
+     - Press [SPACE] to take a picture of the current video frame and do inference and OCR on the frame
+     - Press [P] to pick an existing file from your computer to do inference and OCR on. I implemented this because the camera on my device is of poor quality and was too blurry to do OCR on.
+6. Run the script, and make sure you have activated your virtual environment and cd'd to the file directory: 
+   ```bash
+      python <name of file>.py
+7. Notes:
+   - Once the program does inference on the picture, it will give you a preview of what it saw with bounding boxes, it will then crop the bounding boxes for OCR, and take the name an ID number and do a call to the [PokémonTCG](https://pokemontcg.io/) api and pull the cards' stats if there's a match on the website.
+   - The [PokémonTCG](https://pokemontcg.io/) website only has sets up to 2021 currently, so newer sets will not work with this example.
+   - Make sure to take a relatively clear picture of the card. A good rule of thumb is, if you cant read the picture, neither can the program.
+    
+     
 
 
 
