@@ -11,8 +11,7 @@ Developed a real-time Pokémon card stat reader using a custom-trained YOLOv8n o
 1. If it's your first time setting up the Pi, you will need a microSD card, USB-C power supply, and micro HDMI cable to connect the Pi to a monitor.
 2. If you are creating your own dataset, you will need a camera and a bunch of Pokémon cards.
 3. (*Optional but recommended*) A case for your Pi and AI camera. You can find public Raspberry Pi case files online, but I have linked an [STL file](https://github.com/TippedBucket/Pokemon_card_detector-/tree/main/protective_case_files) to print the camera case and an [f3D file](https://github.com/TippedBucket/Pokemon_card_detector-/tree/main/protective_case_files) for easy alterations.<br><br>
-**Camera Case**
-<img width="200 " height="300" alt="case_image" src="https://github.com/user-attachments/assets/6e7ab73e-0e45-4c4c-9920-b30f4282a616" />
+
 
 # Example Pictures
 <img width="394" height="525" alt="card_detection" src="https://github.com/user-attachments/assets/3a2ae39b-00fc-472c-bee7-e756908ba109" />
