@@ -20,6 +20,7 @@ Developed a real-time Pokémon card stat reader using a custom-trained YOLOv8n o
 # MODEL WORKFLOW<br>
 ![CV_PFD](https://github.com/user-attachments/assets/fbe7533c-9856-40df-8ae3-682c2784a045) <br>
 
+# CREATING MODEL & RUNNING ON PI 
 1. Gathered Pokémon card datasets from Kaggle [Example]( https://www.kaggle.com/datasets/bzhbzh35/pokemon-cards-per-set)<br>
 2. Annotated data on Roboflow, labeling for Set_ID, Name, Card_Number, and the Card.
    - Augmentation steps include:
@@ -62,7 +63,7 @@ Developed a real-time Pokémon card stat reader using a custom-trained YOLOv8n o
          --export_format imx \
          --export_only
          --int8_weights
-   -After about 3-5 minutes, you will see a best_imx_model folder created that will contain the packet_out.zip and the labels.txt files that we will need to get onto our Raspberry Pi.
+   - After about 3-5 minutes, you will see a best_imx_model folder created that will contain the packet_out.zip and the labels.txt files that we will need to get onto our Raspberry Pi.
 6. On the Raspberry Pi, we will need to git clone ```picamera2``` from Raspberry Pi as well as install ```imx500_tools imx500-all```
       ```bash
       sudo apt install imx500-all imx500-tools
@@ -75,7 +76,7 @@ Developed a real-time Pokémon card stat reader using a custom-trained YOLOv8n o
    python imx500_object_detection_demo.py --model /home/<user>/Documents/<file.rpk> --labels /home/<user>/Documents/<labels.txt> --fps 25 --bbox-normalization --ignore-dash-labels --bbox-order xy
 8. It was at this point that I realized the quantization and initial model dataset size was a bit larger than expected, and took the full 8MB of memory on the SONYIMX500. So the model doesn't work as accurately as I was expecting due to the size limitation. My best guess is that it cut off some of the dataset to account for the small memory space, which lowered overall accuracy and detection.  I am still in the process of increasing the accuracy on the IMX500 camera, but in the meantime, the next section will walk you through how to do the API call for a device with more memory
 
-# RUNNING ON YOUR DEVICE
+# RUNNING ON DEVICE
 
 Once you have created a YOLO model following the previous steps, you can run the model very easily on your own device, provided you have a camera. The steps are as follows:<br>
 1. Install Python and set up the virtual environment (venv). I used Python 3.11 when I ran the model
@@ -83,7 +84,12 @@ Once you have created a YOLO model following the previous steps, you can run the
      ```bash
      python -m venv pokemon
      pokemon\Scripts\activate
-2. Intall the dependencies:
+2. Install the dependencies:
+   ```bash
+   pip install opencv-python pillow pytesseract ultralytics requests tk
+3. Get the Pokémon API key by signing up at [Pokemontcg.io](https://pokemontcg.io/)
+4. Create your YOLO model or use the model in this repository here
+5. 
 
 
 
