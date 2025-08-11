@@ -14,7 +14,7 @@ import time
 import requests
 from PIL import Image
 # ------------------- CONFIG -------------------
-POKEMON_API_KEY = ""
+POKEMON_API_KEY = "API_KEY_HERE"
 POKEMON_API_URL = "https://api.pokemontcg.io/v2/cards"
 TESSERACT_PATH = r"C:\Program Files\Tesseract-OCR\tesseract.exe"  # Update if needed
 MODEL_PATH = "best.pt"
@@ -243,3 +243,4 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
+
