@@ -74,9 +74,19 @@ Developed a real-time Pokémon card stat reader using a custom-trained YOLOv8n o
    ```bash
    python imx500_object_detection_demo.py --model /home/<user>/Documents/<file.rpk> --labels /home/<user>/Documents/<labels.txt> --fps 25 --bbox-normalization --ignore-dash-labels --bbox-order xy
 8. It was at this point that I realized the quantization and initial model dataset size was a bit larger than expected, and took the full 8MB of memory on the SONYIMX500. So the model doesn't work as accurately as I was expecting due to the size limitation. My best guess is that it cut off some of the dataset to account for the small memory space, which lowered overall accuracy and detection.  I am still in the process of increasing the accuracy on the IMX500 camera, but in the meantime, the next section will walk you through how to do the API call for a device with more memory
-   
-     
-      
+
+# RUNNING ON YOUR DEVICE
+
+Once you have created a YOLO model following the previous steps, you can run the model very easily on your own device, provided you have a camera. The steps are as follows:<br>
+1. Install Python and set up the virtual environment (venv). I used Python 3.11 when I ran the model
+   - Activate your venv, in my case, I called the venv Pokemon
+     ```bash
+     python -m venv pokemon
+     pokemon\Scripts\activate
+2. Intall the dependencies:
+
+
+
 
 
 
