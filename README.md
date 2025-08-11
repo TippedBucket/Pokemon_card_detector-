@@ -15,7 +15,7 @@ Developed a real-time Pokémon card stat reader using a custom-trained YOLOv8n o
 
 # Example Pictures
 <img width="394" height="525" alt="card_detection" src="https://github.com/user-attachments/assets/3a2ae39b-00fc-472c-bee7-e756908ba109" />
-<img width="495" height="568" alt="OCR Live Data Pull" src="https://github.com/user-attachments/assets/42c90493-320e-45e0-a823-e6d3a2ec4fdc" />
+<img width="495" height="525" alt="OCR Live Data Pull" src="https://github.com/user-attachments/assets/42c90493-320e-45e0-a823-e6d3a2ec4fdc" />
 
 
 
