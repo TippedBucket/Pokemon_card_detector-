@@ -100,11 +100,14 @@ Once you have created a YOLO model following the previous steps, you can run the
 6. Run the script, and make sure you have activated your virtual environment and cd'd to the file directory: 
    ```bash
       python <name of file>.py
-7. Notes:
+# NOTES
    - Once the program does inference on the picture, it will give you a preview of what it saw with bounding boxes, it will then crop the bounding boxes for OCR, and take the name an ID number and do a call to the [PokémonTCG](https://pokemontcg.io/) api and pull the cards' stats if there's a match on the website.
    - The [PokémonTCG](https://pokemontcg.io/) website only has sets up to 2021 currently, so newer sets will not work with this example.
    - Make sure to take a relatively clear picture of the card. A good rule of thumb is, if you can't read the picture, neither can the program.
-    
+   - Special cards with unorthodox naming will have issues with this tool, the Mega Venasaur EX is about the limit of this tool.
+   - The script has console logging so you know what its doing when its doing it:
+    ![logging](https://github.com/user-attachments/assets/f41f77df-344f-47ee-a185-1f6fa9e0948d)
+
      
 
 
