@@ -92,7 +92,7 @@ Once you have created a YOLO model following the previous steps, you can run the
    pip install opencv-python pillow pytesseract ultralytics requests tk
 3. Get the Pokémon API key by signing up at [Pokemontcg.io](https://pokemontcg.io/)
 4. Create your YOLO model or use the model in this repository [here](https://github.com/TippedBucket/Pokemon_card_detector-/tree/main/model)
-5. Download the Python script that runs the model and performs tesseract OCR.
+5. Download the [Python script](https://github.com/TippedBucket/Pokemon_card_detector-/tree/main/execution_script) that runs the model and performs tesseract OCR.
    - Functionality of the script:
      - Press [ESC] to exit the program at any time
      - Press [SPACE] to take a picture of the current video frame and do inference and OCR on the frame
@@ -103,7 +103,7 @@ Once you have created a YOLO model following the previous steps, you can run the
 7. Notes:
    - Once the program does inference on the picture, it will give you a preview of what it saw with bounding boxes, it will then crop the bounding boxes for OCR, and take the name an ID number and do a call to the [PokémonTCG](https://pokemontcg.io/) api and pull the cards' stats if there's a match on the website.
    - The [PokémonTCG](https://pokemontcg.io/) website only has sets up to 2021 currently, so newer sets will not work with this example.
-   - Make sure to take a relatively clear picture of the card. A good rule of thumb is, if you cant read the picture, neither can the program.
+   - Make sure to take a relatively clear picture of the card. A good rule of thumb is, if you can't read the picture, neither can the program.
     
      
 
